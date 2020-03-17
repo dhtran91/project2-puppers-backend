@@ -1,5 +1,7 @@
 package com.revature.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.revature.model.Owner;
@@ -13,6 +15,8 @@ public interface OwnerDao {
 	
 	public void updateOwner(Owner o);
 	
-	public void deleteOwner(Owner o);
+	public void deleteOwner(int id);
+	
+	public List<Owner> getAllOwner();
 
 }

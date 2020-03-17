@@ -1,5 +1,7 @@
 package com.revature.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ public class OwnerDaoImpl implements OwnerDao {
 	@Autowired
 	private SessionFactory sf;
 	
-	@Transactional(propagation=Propagation.SUPPORTS)
+	@Transactional
 	@Override
 	public Owner getById(int id) {
 		Session s = sf.getCurrentSession();
@@ -30,16 +32,26 @@ public class OwnerDaoImpl implements OwnerDao {
 		s.save(o);
 	}
 
-	@Transactional(propagation=Propagation.SUPPORTS)
+	@Transactional
 	@Override
 	public void updateOwner(Owner o) {
 		sf.getCurrentSession().update(o);
 	}
 
-	@Transactional(propagation=Propagation.SUPPORTS)
+	@Transactional
 	@Override
-	public void deleteOwner(Owner o) {
+	public void deleteOwner(int id) {
+		Session s = sf.getCurrentSession();
+		Owner o = (Owner) s.get(Owner.class, id);
 		sf.getCurrentSession().delete(o);
+	}
+
+	@Transactional
+	@Override
+	public List<Owner> getAllOwner() {
+		Session s = sf.getCurrentSession();
+		List<Owner> o = s.createQuery("from Owner").list();
+		return o;
 	}
 	
 

@@ -43,17 +43,5 @@
 		<property name="nestedTransactionAllowed" value="true"></property>
 	</bean>
 
-	<!-- enable spring mvc annotations -->
-	<mvc:annotation-driven></mvc:annotation-driven>	
-		
-	<!-- set up view resolve and location for static resource retrieval -->
-	<mvc:resources location="/WEB-INF/static/" mapping="/static/**"></mvc:resources>
-
-	<bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/static/"></property>
-		<property name="suffix" value=".html"></property>
-	</bean>	
-	<!--  AOP Bean
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>v  -->
 
 </beans>
