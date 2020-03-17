@@ -25,15 +25,21 @@ public class Owner implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="owner_id")
 	private int id;
+	
+	@Column(name="first_name")
 	private String firstName;
+	
+	@Column(name="last_name")
 	private String lastName;
+	
 	@Column(unique = true)
 	private String email;
+	
 	private String password;
 	private String address;
-	private String postalCode;
 	
-
+	@Column(name="postal_code")
+	private String postalCode;
 	
 	public Owner() {
 		super();

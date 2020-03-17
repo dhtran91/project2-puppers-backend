@@ -15,8 +15,6 @@ public class OwnerDaoImpl implements OwnerDao {
 	@Autowired
 	private SessionFactory sf;
 	
-
-
 	@Transactional(propagation=Propagation.SUPPORTS)
 	@Override
 	public Owner getById(int id) {
@@ -24,5 +22,26 @@ public class OwnerDaoImpl implements OwnerDao {
 		Owner o = (Owner) s.get(Owner.class, id);
 		return o;
 	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	@Override
+	public void createOwner(Owner o) {
+		sf.getCurrentSession().save(o);
+	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	@Override
+	public void updateOwner(Owner o) {
+		sf.getCurrentSession().update(o);
+	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	@Override
+	public void deleteOwner(Owner o) {
+		sf.getCurrentSession().delete(o);
+	}
+	
+
+	
 
 }

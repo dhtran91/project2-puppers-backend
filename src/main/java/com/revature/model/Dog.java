@@ -3,18 +3,14 @@ package com.revature.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,25 +27,31 @@ public class Dog implements Serializable {
 	private String name;
 	private String breed;
 	private String gender;
+	
 	@Column( name="dog_age")
 	private int age;
+	
+	@Column(name="dog_size")
 	private String dogSize;
 	private int weight;
-	private String profileComment;
-	@ManyToOne
-	private int ownerId;
-	private String imageUrl;
 	
+	@Column(name="profile_comment")
+	private String profileComment;
+	
+	@ManyToOne
+	@JoinColumn(name="owner_id")
+	private Owner ownerId;
+	
+	@Column(name="image_url")
+	private String imageUrl;
 	
 	
 	public Dog() {
 	 super();
 	}
 
-
-
 	public Dog(int id, String name, String breed, String gender, int age, String dogSize, int weight,
-			String profileComment, int ownerId, String imageUrl) {
+			String profileComment, Owner ownerId, String imageUrl) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -161,13 +163,13 @@ public class Dog implements Serializable {
 
 
 
-	public int getOwnerId() {
+	public Owner getOwnerId() {
 		return ownerId;
 	}
 
 
 
-	public void setOwnerId(int ownerId) {
+	public void setOwnerId(Owner ownerId) {
 		this.ownerId = ownerId;
 	}
 

@@ -1,9 +1,6 @@
 package com.revature.dao;
 
-public class DogDao {
+public interface DogDao {
 
-	public DogDao() {
-		// TODO Auto-generated constructor stub
-	}
 
 }
