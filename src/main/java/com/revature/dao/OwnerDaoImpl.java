@@ -23,10 +23,11 @@ public class OwnerDaoImpl implements OwnerDao {
 		return o;
 	}
 
-	@Transactional(propagation=Propagation.SUPPORTS)
+	@Transactional
 	@Override
 	public void createOwner(Owner o) {
-		sf.getCurrentSession().save(o);
+		Session s = sf.getCurrentSession();
+		s.save(o);
 	}
 
 	@Transactional(propagation=Propagation.SUPPORTS)
