@@ -56,6 +56,17 @@ public class Owner implements Serializable {
 		this.postalCode = postalCode;
 	}
 
+	public Owner(int id, String firstName, String lastName, String email, String password, String address,
+			String postalCode) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.address = address;
+		this.postalCode = postalCode;
+	}
 
 
 	public int getId() {
