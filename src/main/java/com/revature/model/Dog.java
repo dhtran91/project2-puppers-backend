@@ -44,6 +44,7 @@ public class Dog implements Serializable {
 	
 	@Column(name="image_url")
 	private String imageUrl;
+	private String dogStatus;
 	
 	
 	public Dog() {
@@ -51,7 +52,7 @@ public class Dog implements Serializable {
 	}
 	
 	public Dog(String name, String breed, String gender, int age, String dogSize, int weight,
-			String profileComment, Owner ownerId, String imageUrl) {
+			String profileComment, Owner ownerId, String imageUrl, String dogStatus) {
 		super();
 		this.name = name;
 		this.breed = breed;
@@ -62,10 +63,11 @@ public class Dog implements Serializable {
 		this.profileComment = profileComment;
 		this.ownerId = ownerId;
 		this.imageUrl = imageUrl;
+		this.dogStatus = dogStatus;
 	}
 
 	public Dog(int id, String name, String breed, String gender, int age, String dogSize, int weight,
-			String profileComment, Owner ownerId, String imageUrl) {
+			String profileComment, Owner ownerId, String imageUrl, String dogStatus) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -77,6 +79,7 @@ public class Dog implements Serializable {
 		this.profileComment = profileComment;
 		this.ownerId = ownerId;
 		this.imageUrl = imageUrl;
+		this.dogStatus = dogStatus;
 	}
 
 
@@ -199,11 +202,18 @@ public class Dog implements Serializable {
 		this.imageUrl = imageUrl;
 	}
 
+	public void setDogStatus(String dogStatus) {
+		this.dogStatus = dogStatus;
+	}
 
 
+	public String getDogStatus(String dogStatus) {
+		return dogStatus;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(age, breed, dogSize, gender, id, imageUrl, name, ownerId, profileComment, weight);
+		return Objects.hash(age, breed, dogSize, dogStatus, gender, id, imageUrl, name, ownerId, profileComment,
+				weight);
 	}
 
 
@@ -218,9 +228,10 @@ public class Dog implements Serializable {
 			return false;
 		Dog other = (Dog) obj;
 		return age == other.age && Objects.equals(breed, other.breed) && Objects.equals(dogSize, other.dogSize)
-				&& Objects.equals(gender, other.gender) && id == other.id && Objects.equals(imageUrl, other.imageUrl)
-				&& Objects.equals(name, other.name) && ownerId == other.ownerId
-				&& Objects.equals(profileComment, other.profileComment) && weight == other.weight;
+				&& Objects.equals(dogStatus, other.dogStatus) && Objects.equals(gender, other.gender) && id == other.id
+				&& Objects.equals(imageUrl, other.imageUrl) && Objects.equals(name, other.name)
+				&& Objects.equals(ownerId, other.ownerId) && Objects.equals(profileComment, other.profileComment)
+				&& weight == other.weight;
 	}
 
 
@@ -229,7 +240,7 @@ public class Dog implements Serializable {
 	public String toString() {
 		return "Dog [id=" + id + ", name=" + name + ", breed=" + breed + ", gender=" + gender + ", age=" + age
 				+ ", dogSize=" + dogSize + ", weight=" + weight + ", profileComment=" + profileComment + ", ownerId="
-				+ ownerId + ", imageUrl=" + imageUrl + "]";
+				+ ownerId + ", imageUrl=" + imageUrl + ", dogStatus=" + dogStatus + "]";
 	}
 
 }

@@ -19,9 +19,9 @@
 	
 	<!-- Data Source Bean Configuration -->
 	<bean id="ourDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="url" value="jdbc:postgresql://localhost:5432/postgres"></property>
+		<property name="url" value="jdbc:postgresql://database-2.c3yxiez7hipm.us-east-2.rds.amazonaws.com:5432/postgres"></property>
 		<property name="username" value="postgres"></property>
-		<property name="password" value="project0"></property>
+		<property name="password" value="L0v32020"></property>
 		<property name="driverClassName" value="org.postgresql.Driver"></property>
 	</bean>
 	
