@@ -10,7 +10,7 @@ import com.revature.model.Owner;
 
 @Service
 public class OwnerService {
-
+	
 	@Autowired
 	OwnerDao ownerDao;
 	
@@ -33,5 +33,6 @@ public class OwnerService {
 	public void deleteOwner(int id) {
 		ownerDao.deleteOwner(id);
 	}
+	
 	
 }

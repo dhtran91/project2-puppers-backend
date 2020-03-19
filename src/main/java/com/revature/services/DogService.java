@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.dao.DogDao;
 import com.revature.model.Dog;
-import com.revature.model.Owner;
+
 
 @Service
 public class DogService {

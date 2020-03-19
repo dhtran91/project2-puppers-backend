@@ -1,6 +1,8 @@
 package com.revature.controllers;
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,24 +34,28 @@ public class OwnerController {
 	public Owner getOwnerById(@PathVariable("id")int id){
 		return ownerService.getOwnerById(id);
 	}
-	
-	@PostMapping
+	   
+	@PostMapping("/new")
 	public ResponseEntity<String> createOwner(@RequestBody Owner o) {
 		ownerService.createOwner(o);
 		return new ResponseEntity<>("added owner "+o.getId(),HttpStatus.CREATED);
 	}
 
-	@PutMapping("{id}")
-	public void updateOwner(@PathVariable("id")int id,
-			@PathVariable("first-name")String firstName,
-			@PathVariable("last-name")String lastName,
-			@PathVariable("email")String email,
-			@PathVariable("password")String password,
-			@PathVariable("address")String address,
-			@PathVariable("postal-code")String postalCode) {
-		
-		Owner o = new Owner(id, firstName, lastName, email, password, address, postalCode);
+	@PostMapping("/login")
+	public Owner validateOwner(@RequestBody String email, String password) {
+		List<Owner> owners = ownerService.getAllOwners();
+		Owner o1 = null;
+		for(Owner o : owners) {
+			if(o.getEmail() != null && o.getEmail().equals(email) && o.getPassword() != null && o.getPassword().equals(password));
+			o1 = o;
+		}
+		return o1;
+	} 
+	
+	@PutMapping("/update")
+	public ResponseEntity<String> updateOwner(@RequestBody Owner o) {
 		ownerService.updateOwner(o);
+		return new ResponseEntity<>("updated owner " +o.getId(),HttpStatus.CREATED);
 	}
 	
 	
