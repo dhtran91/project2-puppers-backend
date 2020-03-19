@@ -1,6 +1,8 @@
 package com.revature.controllers;
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,13 +34,18 @@ public class OwnerController {
 	public Owner getOwnerById(@PathVariable("id")int id){
 		return ownerService.getOwnerById(id);
 	}
-	
-	@PostMapping
+	   
+	@PostMapping("/newOwner")
 	public ResponseEntity<String> createOwner(@RequestBody Owner o) {
 		ownerService.createOwner(o);
 		return new ResponseEntity<>("added owner "+o.getId(),HttpStatus.CREATED);
 	}
 
+	@PostMapping("/login")
+	public void validateOwner(@RequestBody String email, String password) {
+		ownerService.validateOwner(email, password);
+	} 
+	
 	@PutMapping("{id}")
 	public void updateOwner(@PathVariable("id")int id,
 			@PathVariable("first-name")String firstName,

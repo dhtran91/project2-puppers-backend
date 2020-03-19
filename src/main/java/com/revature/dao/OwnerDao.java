@@ -18,5 +18,6 @@ public interface OwnerDao {
 	public void deleteOwner(int id);
 	
 	public List<Owner> getAllOwner();
+	
 
 }
