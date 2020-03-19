@@ -35,28 +35,27 @@ public class OwnerController {
 		return ownerService.getOwnerById(id);
 	}
 	   
-	@PostMapping("/newOwner")
+	@PostMapping("/new")
 	public ResponseEntity<String> createOwner(@RequestBody Owner o) {
 		ownerService.createOwner(o);
 		return new ResponseEntity<>("added owner "+o.getId(),HttpStatus.CREATED);
 	}
 
 	@PostMapping("/login")
-	public void validateOwner(@RequestBody String email, String password) {
-		ownerService.validateOwner(email, password);
+	public Owner validateOwner(@RequestBody String email, String password) {
+		List<Owner> owners = ownerService.getAllOwners();
+		Owner o1 = null;
+		for(Owner o : owners) {
+			if(o.getEmail() != null && o.getEmail().equals(email) && o.getPassword() != null && o.getPassword().equals(password));
+			o1 = o;
+		}
+		return o1;
 	} 
 	
-	@PutMapping("{id}")
-	public void updateOwner(@PathVariable("id")int id,
-			@PathVariable("first-name")String firstName,
-			@PathVariable("last-name")String lastName,
-			@PathVariable("email")String email,
-			@PathVariable("password")String password,
-			@PathVariable("address")String address,
-			@PathVariable("postal-code")String postalCode) {
-		
-		Owner o = new Owner(id, firstName, lastName, email, password, address, postalCode);
+	@PutMapping("/update")
+	public ResponseEntity<String> updateOwner(@RequestBody Owner o) {
 		ownerService.updateOwner(o);
+		return new ResponseEntity<>("updated owner " +o.getId(),HttpStatus.CREATED);
 	}
 	
 	

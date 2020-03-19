@@ -10,7 +10,7 @@ import com.revature.model.Owner;
 
 @Service
 public class OwnerService {
-
+	
 	@Autowired
 	OwnerDao ownerDao;
 	
@@ -34,14 +34,5 @@ public class OwnerService {
 		ownerDao.deleteOwner(id);
 	}
 	
-	public Owner validateOwner(String email, String password) {
-		List<Owner> owners = ownerDao.getAllOwner();
-		for( Owner o: owners) {
-			if(o.getEmail() != null && o.getEmail().equals(email) && o.getPassword() != null && o.getPassword().equals(password)) {
-				return o;
-			}
-		}
-		return null;			
-	}
 	
 }

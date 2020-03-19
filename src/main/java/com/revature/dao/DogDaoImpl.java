@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Dog;
-import com.revature.model.Owner;
+
 
 @Repository
 public class DogDaoImpl implements DogDao{
