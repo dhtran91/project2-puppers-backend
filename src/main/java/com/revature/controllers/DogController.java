@@ -34,13 +34,13 @@ public class DogController {
 		return dogService.getDogById(id);
 	}
 		
-	@PostMapping
+	@PostMapping("/new")
 	public ResponseEntity<String> createDog(@RequestBody Dog d) {
 		dogService.createDog(d);
 		return new ResponseEntity<>("added dog "+d.getName(),HttpStatus.CREATED);
 	}
 
-	@PutMapping
+	@PutMapping("/update")
 	public ResponseEntity<String> updateDog(@RequestBody Dog d) {
 		dogService.updateDog(d);
 		return new ResponseEntity<>("updated dog " +d.getId(),HttpStatus.CREATED);
