@@ -43,5 +43,7 @@
 		<property name="nestedTransactionAllowed" value="true"></property>
 	</bean>
 
+	<!--  AOP Bean -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 </beans>
