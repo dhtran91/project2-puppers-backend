@@ -16,5 +16,6 @@ public interface DogDao {
 	public void deleteDog(int id);
 	
 	public List<Dog> getAllDog();
+	
 
 }
