@@ -67,6 +67,11 @@ public class Owner implements Serializable {
 		this.address = address;
 		this.postalCode = postalCode;
 	}
+	
+	public Owner(int id) {
+		super();
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
