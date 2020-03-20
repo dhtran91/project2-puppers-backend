@@ -48,7 +48,7 @@
 		
 	<!-- set up view resolve and location for static resource retrieval -->
 
-	<!--  AOP Bean
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>v  -->
+	<!--  AOP Bean -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 </beans>
