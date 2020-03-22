@@ -17,5 +17,6 @@ public interface OwnerDao {
 	
 	public List<Owner> getAllOwner();
 	
+	
 
 }

@@ -45,8 +45,8 @@ public class OwnerController {
 
 	@PostMapping("/login")
 	public ResponseEntity<String> validateOwner(@RequestBody String email, String password) {
-		List<Owner> owners = ownerService.getAllOwners();
 		Owner o1 = new Owner();
+		List<Owner> owners = ownerService.getAllOwners();
 		for(Owner o : owners) {
 			if(o.getEmail() != null && o.getEmail().equals(email)) {
 				if (o.getPassword() != null && o.getPassword().equals(password)) {

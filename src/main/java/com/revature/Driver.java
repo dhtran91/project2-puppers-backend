@@ -32,20 +32,20 @@ public class Driver {
 //	Owner o1 = ownerDao.getById(1);
 //	System.out.println(o1);
 	
-//		String email = "jay@gmail.com";
-//		String password ="password";
-//		Owner o1 = new Owner();
-//		List<Owner> owners = ownerDao.getAllOwner();
-//		for(Owner o : owners) {
-//			if(o.getEmail() != null && o.getEmail().equals(email)) {
-//				if (o.getPassword() != null && o.getPassword().equals(password)) {
-//				 o1 =o;
-//				 System.out.println(o1);
-//			}
-//				
-//			}
-//			
-//		}
+		String email = "jay@gmail.com";
+		String password ="password";
+		Owner o1 = new Owner();
+		List<Owner> owners = ownerDao.getAllOwner();
+		for(Owner o : owners) {
+			if(o.getEmail() != null && o.getEmail().equals(email)) {
+				if (o.getPassword() != null && o.getPassword().equals(password)) {
+				 o1 =o;
+				 System.out.println(o1);
+			}
+				
+			}
+			
+		}
 
 	
 //	Dog d = new Dog();
