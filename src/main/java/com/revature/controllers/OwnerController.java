@@ -51,12 +51,13 @@ public class OwnerController {
 			if(o.getEmail() != null && o.getEmail().equals(email)) {
 				if (o.getPassword() != null && o.getPassword().equals(password)) {
 					o1 = o;
+					return o1;
 			}
-			
+				
 			}
 			
 		}
-		return o1;
+		return null;
 	} 
 	
 	@PutMapping("/update")
