@@ -44,17 +44,21 @@ public class OwnerController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<String> validateOwner(@RequestBody String email, String password) {
-		Owner o1 = null;
+	public Owner validateOwner(@RequestBody String email, String password) {
 		List<Owner> owners = ownerService.getAllOwners();
+		Owner o1 = null;
 		for(Owner o : owners) {
-			if(o.getEmail() == (email) && o.getPassword() == (password)) {
-				o1 = o;
-				return new ResponseEntity<>("owner logged in" + o1, HttpStatus.CREATED);
+			if(o.getEmail() != null && o.getEmail().equals(email)) {
+				if (o.getPassword() != null && o.getPassword().equals(password)) {
+					o1 = o;
 			}
+				
+			}
+			
 		}
-	return new ResponseEntity<>("owner failed to login", HttpStatus.NOT_FOUND);
-	}
+		return o1;
+	} 
+	
 	@PutMapping("/update")
 	public ResponseEntity<String> updateOwner(@RequestBody Owner o) {
 		ownerService.updateOwner(o);
