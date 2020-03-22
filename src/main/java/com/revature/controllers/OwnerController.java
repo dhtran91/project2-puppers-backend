@@ -48,8 +48,11 @@ public class OwnerController {
 		List<Owner> owners = ownerService.getAllOwners();
 		Owner o1 = null;
 		for(Owner o : owners) {
-			if(o.getEmail() != null && o.getEmail().equals(email) && o.getPassword() != null && o.getPassword().equals(password)) {
-				o1 = o;
+			if(o.getEmail() != null && o.getEmail().equals(email)) {
+				if (o.getPassword() != null && o.getPassword().equals(password)) {
+					o1 = o;
+			}
+			
 			}
 			
 		}
