@@ -43,8 +43,8 @@ public class OwnerController {
 		return new ResponseEntity<>("added owner "+o.getId(),HttpStatus.CREATED);
 	}
 
-	@PostMapping("/login")
-	public Owner validateOwner(@RequestBody String email, String password) {
+	@PostMapping("/login/{email}/{password}")
+	public Owner validateOwner(@PathVariable("email") String email, @PathVariable("password")String password) {
 		List<Owner> owners = ownerService.getAllOwners();
 		Owner o1 = null;
 		for(Owner o : owners) {
@@ -52,7 +52,7 @@ public class OwnerController {
 				if (o.getPassword() != null && o.getPassword().equals(password)) {
 					o1 = o;
 			}
-				
+			
 			}
 			
 		}
