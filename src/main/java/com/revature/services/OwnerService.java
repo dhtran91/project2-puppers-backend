@@ -37,20 +37,16 @@ public class OwnerService {
 		ownerDao.deleteOwner(id);
 	}
 	
-//	public Owner validateOwner(String email, String password) {
+//	public void validateOwner(String email, String password) {
 //		List<Owner> owners = ownerDao.getAllOwner();
 //		Owner o1 = new Owner();
 //		for(Owner o : owners) {
 //			if(o.getEmail() != null && o.getEmail().equals(email)) {
 //				if (o.getPassword() != null && o.getPassword().equals(password)) {
-//					o1 = o;
-//				return o1;
+//					o1 = o;		
+//				}
 //			}
-//				
-//			}
-//			
-//		}return null;
-//
+//		}
 //	} 
-//	
+	
 }
