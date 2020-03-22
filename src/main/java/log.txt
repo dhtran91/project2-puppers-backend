@@ -1,0 +1,34 @@
+2020-03-22 12:11:11 INFO  AbstractApplicationContext:581 method: prepareRefresh - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ee0005: startup date [Sun Mar 22 12:11:11 CDT 2020]; root of context hierarchy
+2020-03-22 12:11:11 INFO  XmlBeanDefinitionReader:317 method: loadBeanDefinitions - Loading XML bean definitions from class path resource [beans.xml]
+2020-03-22 12:11:11 INFO  JavaReflectionManager:66 method: <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-03-22 12:11:11 INFO  Version:54 method: logVersion - HHH000412: Hibernate Core {4.3.11.Final}
+2020-03-22 12:11:11 INFO  Environment:239 method: <clinit> - HHH000206: hibernate.properties not found
+2020-03-22 12:11:11 INFO  Environment:346 method: buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+2020-03-22 12:11:24 INFO  Dialect:145 method: <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-03-22 12:11:24 INFO  LobCreatorBuilder:123 method: useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2020-03-22 12:11:24 INFO  TransactionFactoryInitiator:62 method: initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-03-22 12:11:24 INFO  ASTQueryTranslatorFactory:47 method: <init> - HHH000397: Using ASTQueryTranslatorFactory
+2020-03-22 12:11:25 INFO  SchemaValidator:157 method: validate - HHH000229: Running schema validator
+2020-03-22 12:11:25 INFO  SchemaValidator:165 method: validate - HHH000102: Fetching database metadata
+2020-03-22 12:11:25 INFO  TableMetadata:65 method: <init> - HHH000261: Table found: public.dog
+2020-03-22 12:11:25 INFO  TableMetadata:66 method: <init> - HHH000037: Columns: [profile_comment, dogstatus, gender, dog_name, image_url, owner_id, dog_size, weight, id, dog_age, breed]
+2020-03-22 12:11:25 INFO  TableMetadata:65 method: <init> - HHH000261: Table found: public.owner
+2020-03-22 12:11:25 INFO  TableMetadata:66 method: <init> - HHH000037: Columns: [password, address, owner_id, last_name, postal_code, first_name, email]
+2020-03-22 12:11:25 INFO  HibernateTransactionManager:360 method: afterPropertiesSet - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1018bde2] of Hibernate SessionFactory for HibernateTransactionManager
+2020-03-22 12:20:31 INFO  AbstractApplicationContext:581 method: prepareRefresh - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ee0005: startup date [Sun Mar 22 12:20:31 CDT 2020]; root of context hierarchy
+2020-03-22 12:20:31 INFO  XmlBeanDefinitionReader:317 method: loadBeanDefinitions - Loading XML bean definitions from class path resource [beans.xml]
+2020-03-22 12:20:32 INFO  JavaReflectionManager:66 method: <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-03-22 12:20:32 INFO  Version:54 method: logVersion - HHH000412: Hibernate Core {4.3.11.Final}
+2020-03-22 12:20:32 INFO  Environment:239 method: <clinit> - HHH000206: hibernate.properties not found
+2020-03-22 12:20:32 INFO  Environment:346 method: buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+2020-03-22 12:20:45 INFO  Dialect:145 method: <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-03-22 12:20:45 INFO  LobCreatorBuilder:123 method: useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2020-03-22 12:20:45 INFO  TransactionFactoryInitiator:62 method: initiateService - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2020-03-22 12:20:45 INFO  ASTQueryTranslatorFactory:47 method: <init> - HHH000397: Using ASTQueryTranslatorFactory
+2020-03-22 12:20:45 INFO  SchemaValidator:157 method: validate - HHH000229: Running schema validator
+2020-03-22 12:20:45 INFO  SchemaValidator:165 method: validate - HHH000102: Fetching database metadata
+2020-03-22 12:20:46 INFO  TableMetadata:65 method: <init> - HHH000261: Table found: public.dog
+2020-03-22 12:20:46 INFO  TableMetadata:66 method: <init> - HHH000037: Columns: [profile_comment, dogstatus, gender, dog_name, image_url, owner_id, dog_size, weight, id, dog_age, breed]
+2020-03-22 12:20:46 INFO  TableMetadata:65 method: <init> - HHH000261: Table found: public.owner
+2020-03-22 12:20:46 INFO  TableMetadata:66 method: <init> - HHH000037: Columns: [password, address, owner_id, last_name, postal_code, first_name, email]
+2020-03-22 12:20:46 INFO  HibernateTransactionManager:360 method: afterPropertiesSet - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1018bde2] of Hibernate SessionFactory for HibernateTransactionManager
