@@ -48,7 +48,7 @@ public class OwnerController {
 		Owner o1 = null;
 		List<Owner> owners = ownerService.getAllOwners();
 		for(Owner o : owners) {
-			if(o.getEmail().equals(email) && o.getPassword().equals(password)) {
+			if(o.getEmail() == (email) && o.getPassword() == (password)) {
 				o1 = o;
 				return new ResponseEntity<>("owner logged in" + o1, HttpStatus.CREATED);
 			}
