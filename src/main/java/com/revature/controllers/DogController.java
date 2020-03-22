@@ -31,7 +31,7 @@ public class DogController {
 		return dogService.getAllDogs();
 	}
 	
-	@GetMapping("{/id}")
+	@GetMapping("/{/id}")
 	public Dog getDogById(@PathVariable("id")int id) {
 		return dogService.getDogById(id);
 	}
@@ -48,7 +48,7 @@ public class DogController {
 		return new ResponseEntity<>("updated dog " +d.getId(),HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping("{/id}")
+	@DeleteMapping("/{/id}")
 	public void deleteDog(@PathVariable("id")int id) {
 		dogService.deleteDog(id);
 	}
